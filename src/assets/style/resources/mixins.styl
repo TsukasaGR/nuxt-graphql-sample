@@ -1,0 +1,27 @@
+breakpoint(bpName = 'md') {
+  for name in bpName {
+    if (name == 'sm') {
+      @media screen and (max-width: $screen-sm) {
+        {block};
+      }
+    }
+
+    if (name == 'md') {
+      @media screen and (min-width: $screen-md) {
+        {block};
+      }
+    }
+
+    if (name == 'lg') {
+      @media screen and (min-width: $screen-lg) {
+        {block};
+      }
+    }
+
+    if (name == 'xl') {
+      @media screen and (min-width: $screen-xl) {
+        {block};
+      }
+    }
+  }
+}
