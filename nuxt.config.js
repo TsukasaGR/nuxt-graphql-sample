@@ -38,15 +38,12 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vuetify'],
+  plugins: ['@/plugins/vuetify', '~/plugins/vuesax'],
 
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    '@nuxtjs/style-resources',
-    '@nuxtjs/apollo'
-  ],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/apollo'],
 
   styleResources: {
     stylus: '~/assets/style/resources/*.styl'
@@ -73,8 +70,12 @@ module.exports = {
     tokenExpires: 10,
     includeNodeModules: true,
     authenticationType: 'Bearer',
-    errorHandler (error) {
-      console.log('%cError', 'background: red; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold;', error.message)
+    errorHandler(error) {
+      console.log(
+        '%cError',
+        'background: red; color: white; padding: 2px 4px; border-radius: 3px; font-weight: bold;',
+        error.message
+      )
     },
     clientConfigs: {
       default: {

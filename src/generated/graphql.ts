@@ -56,6 +56,8 @@ export interface User {
 
   password: string
 
+  avatar: string
+
   articles?: Maybe<(Maybe<Article>)[]>
 
   createdAt: DateTime
@@ -137,11 +139,11 @@ export interface CreateUserMutationArgs {
   password?: Maybe<string>
 }
 export interface UpdateUserMutationArgs {
-  id?: Maybe<string>
+  id: string
 
-  name?: Maybe<string>
+  name: string
 
-  email?: Maybe<string>
+  email: string
 }
 export interface DeleteUserMutationArgs {
   id: string

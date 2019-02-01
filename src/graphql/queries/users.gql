@@ -1,5 +1,5 @@
-query {
-  users(count: 10) {
+query queryUsers($count: Int!) {
+  users(count: $count) {
     data {
       id
       name
