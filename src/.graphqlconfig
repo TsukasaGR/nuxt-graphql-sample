@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "ego": {
+      "schemaPath": "/Users/sekiguchi_t/Sources/Other/laravel-lighthouse-example/routes/graphql/schema.graphql",
+      "extensions": {
+        "endpoints": {
+          "default": "http://localhost:8000/graphql"
+        }
+      }
+    }
+  }
+}

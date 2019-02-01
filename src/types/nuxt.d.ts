@@ -3,7 +3,7 @@ import { Store } from 'vuex'
 import VueRouter, { Route } from 'vue-router'
 import { RootState } from '~/store/types'
 import { RequestOptions, ServerResponse } from 'http'
-import { DollarApollo } from 'vue-apollo/types/vue-apollo';
+import { DollarApollo } from 'vue-apollo/types/vue-apollo'
 
 type Dictionary<T> = { [key: string]: T }
 
@@ -25,12 +25,10 @@ export interface ApplicationContext {
   error: (params: { statusCode: number; message: string }) => void
   nuxtState: RootState
   beforeNuxtRender: (
-    fn: (
-      params: {
-        Components: VueRouter['getMatchedComponents']
-        nuxtState: RootState
-      }
-    ) => void
+    fn: (params: {
+      Components: VueRouter['getMatchedComponents']
+      nuxtState: RootState
+    }) => void
   ) => void
 }
 
@@ -71,7 +69,7 @@ declare module 'vue/types/options' {
 }
 
 declare module 'vue/types/vue' {
-	interface Vue {
-		$apollo: DollarApollo<any>
-	}
+  interface Vue {
+    $apollo: DollarApollo<any>
+  }
 }

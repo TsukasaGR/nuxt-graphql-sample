@@ -1,40 +1,30 @@
 <template>
-  <div>
-    <h1>GraphQLサンプル</h1>
-    <div class="user-info-container">
-      <p>id: {{ user.id }}</p>
-      <p>name: {{ user.name }}</p>
-    </div>
-  </div>
+  <Users class="users" :users="users"/>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import gql from 'graphql-tag'
+import * as gqlTypes from '~/generated/graphql'
+// @ts-ignore
+import queryUsers from '~/graphql/users.gql'
 
-interface IUser {
-  id: number
-  name: string
-}
+import Users from '~/components/users.vue'
 
-@Component
-export default class Index extends Vue {
-  user: IUser = {
-    id: 0,
-    name: ''
+@Component({
+  components: {
+    Users
   }
+})
+export default class Index extends Vue {
+  users: gqlTypes.User[] = []
 
   async mounted() {
-    const query: any = gql`
-      query {
-        user(id: 1) {
-          id
-          name
-        }
-      }
-    `
-    await this.$apollo.query({query})
-      .then((res: any) => this.user = res.data.user)
+    const query: any = queryUsers
+
+    await this.$apollo.query({ query }).then((res: any) => {
+      const userPaginator: gqlTypes.UserPaginator = res.data.users
+      this.users = userPaginator.data
+    })
   }
 }
 </script>
@@ -43,7 +33,8 @@ export default class Index extends Vue {
 h1 {
   margin: 30px 0;
 }
-user-info-container {
+
+.users {
   padding: 20px;
 }
 </style>
