@@ -32,8 +32,7 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import * as gqlTypes from '~/generated/graphql'
-// @ts-ignore
-import queryUsers from '~/graphql/queries/users.gql'
+import queryUsers from '~/graphql/queries/users.graphql'
 
 @Component
 export default class Index extends Vue {

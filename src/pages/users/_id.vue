@@ -19,10 +19,8 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import * as gqlTypes from '~/generated/graphql'
 import Notification from '~/modules/notification'
-// @ts-ignore
-import queryUser from '~/graphql/queries/user.gql'
-// @ts-ignore
-import mutationUpdateUser from '~/graphql/mutations/updateUser.gql'
+import queryUser from '~/graphql/queries/user.graphql'
+import mutationUpdateUser from '~/graphql/mutations/updateUser.graphql'
 
 @Component
 export default class Index extends Vue {

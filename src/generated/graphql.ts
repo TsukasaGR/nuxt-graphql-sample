@@ -3,6 +3,8 @@ export type Maybe<T> = T | null
 /** A datetime string with format 'Y-m-d H:i:s', e.g. '2018-01-01 13:00:00'. */
 export type DateTime = any
 
+export type Users = any
+
 /** A date string with format 'Y-m-d', e.g. '2011-05-23'. */
 export type Date = any
 
@@ -87,6 +89,8 @@ export interface Mutation {
   deleteUser?: Maybe<User>
 
   deleteUsersByEmail?: Maybe<DummyResponse>
+
+  createUsers?: Maybe<DummyResponse>
 }
 
 export interface DummyResponse {
@@ -150,4 +154,7 @@ export interface DeleteUserMutationArgs {
 }
 export interface DeleteUsersByEmailMutationArgs {
   email: string
+}
+export interface CreateUsersMutationArgs {
+  users?: Maybe<Users>
 }

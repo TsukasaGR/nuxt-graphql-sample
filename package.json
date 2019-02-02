@@ -18,6 +18,7 @@
     "graphql-code-generator": "^0.16.0",
     "graphql-codegen-typescript-client": "^0.16.0",
     "graphql-codegen-typescript-server": "^0.16.0",
+    "graphql-import-node": "^0.0.1",
     "nuxt": "^2.0.0",
     "vuesax": "^3.8.16",
     "vuetify": "^1.2.4",

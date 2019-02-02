@@ -4,6 +4,7 @@ import VueRouter, { Route } from 'vue-router'
 import { RootState } from '~/store/types'
 import { RequestOptions, ServerResponse } from 'http'
 import { DollarApollo } from 'vue-apollo/types/vue-apollo'
+import 'graphql-import-node'
 
 type Dictionary<T> = { [key: string]: T }
 
@@ -65,11 +66,5 @@ declare module 'vue/types/options' {
     scrollToTop?: boolean
     validate?: (context: ApplicationContext) => Promise<boolean> | boolean
     middleware?: string | string[]
-  }
-}
-
-declare module 'vue/types/vue' {
-  interface Vue {
-    $apollo: DollarApollo<any>
   }
 }
